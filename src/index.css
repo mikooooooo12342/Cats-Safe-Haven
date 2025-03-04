@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 33% 97%;
+    --foreground: 20 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 10% 10%;
+
+    --primary: 24 85% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 50% 95%;
+    --secondary-foreground: 20 10% 10%;
+
+    --muted: 40 33% 95%;
+    --muted-foreground: 20 10% 40%;
+
+    --accent: 24 85% 76%;
+    --accent-foreground: 20 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 20 10% 85%;
+    --input: 20 10% 85%;
+    --ring: 24 75% 56%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 20 10% 10%;
+    --foreground: 40 33% 95%;
+
+    --card: 20 10% 12%;
+    --card-foreground: 40 33% 95%;
+
+    --popover: 20 10% 12%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 24 85% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 20 10% 16%;
+    --secondary-foreground: 40 33% 95%;
+
+    --muted: 20 10% 20%;
+    --muted-foreground: 40 33% 75%;
+
+    --accent: 24 85% 46%;
+    --accent-foreground: 40 33% 95%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 40 33% 95%;
+
+    --border: 20 10% 20%;
+    --input: 20 10% 20%;
+    --ring: 24 75% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-white/40 backdrop-blur-md border border-white/30 shadow-md;
+  }
+  
+  .dark .glass {
+    @apply bg-black/40 backdrop-blur-md border border-white/10 shadow-md;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  /* Custom animations */
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+}
